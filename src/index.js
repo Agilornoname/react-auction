@@ -1,27 +1,24 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import NextApp from './NextApp';
-import reportWebVitals from './reportWebVitals';
-import {AppContainer} from 'react-hot-loader';
+import React, {Suspense, lazy} from "react"
+import {Layout} from "./utility/context/Layout"
+import {IntlProviderWrapper} from "./utility/context/Internationalization"
+import Spinner from "./components/spinner/Fallback-spinner"
+import * as serviceWorker from "./serviceWorker"
 
-const rootApp = Component => {
-  ReactDOM.render(
-    // Wrap App inside AppContainer
-    <AppContainer>
-      <NextApp/>
-    </AppContainer>,
-    document.getElementById('root')
-  );
-};
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const NextApp = lazy(() => import("./NextApp"))
 
-// Webpack Hot Module Replacement API
-if (module.hot) {
-  module.hot.accept('./NextApp', () => {
-    rootApp(NextApp);
-  });
-}
+// configureDatabase()
+
+ReactDOM.render(
+
+    <Suspense fallback={<Spinner/>}>
+        <Layout>
+            <IntlProviderWrapper>
+                <NextApp/>
+            </IntlProviderWrapper>
+        </Layout>
+    </Suspense>,
+    document.getElementById("root")
+)
+serviceWorker.unregister()

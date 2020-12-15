@@ -1,15 +1,13 @@
-//import logo from './logo.svg';
-import React from "react";
-import './App.css';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import App from "./containers/App";
-// from "react-router-dom"; import App from "./containers/App";
+import React from "react"
+import Router from "./Router"
+//import "./components/@vuexy/rippleButton/RippleButton"
 
-console.log('test')
-const NextApp = () =>
-    <Switch>
-        <Route path="/" component={App}/>
-    </Switch>;
+// import "react-perfect-scrollbar/dist/css/styles.css"
+// import "prismjs/themes/prism-tomorrow.css"
 
+const NextApp = props => {
+    console.log('here')
+    return <Router />
+}
 
-export default NextApp;
+export default NextApp
