@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import classnames from "classnames"
 import { ContextLayout } from "../../../../utility/context/Layout"
-import { connect } from "react-redux"
+//import { connect } from "react-redux"
 import SidebarHeader from "./SidebarHeader"
 import Hammer from "react-hammerjs"
 import SideMenuContent from "./sidemenu/SideMenuContent"

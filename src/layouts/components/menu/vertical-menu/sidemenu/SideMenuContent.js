@@ -5,8 +5,8 @@ import navigationConfig from "../../../../../configs/navigationConfig"
 import SideMenuGroup from "./SideMenuGroup"
 import { Badge } from "reactstrap"
 import { ChevronRight } from "react-feather"
-//import { FormattedMessage } from "react-intl"
-//import { history } from "../../../../../history"
+import { FormattedMessage } from "react-intl"
+import { history } from "../../../../../history"
 
 class SideMenuContent extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class SideMenuContent extends React.Component {
     this.parentArr = []
     this.collapsedPath = null
     this.redirectUnauthorized = () => {
-      //history.push("/misc/not-authorized")
+      history.push("/misc/not-authorized")
     }
   }
   state = {
@@ -193,7 +193,7 @@ class SideMenuContent extends React.Component {
             <div className="menu-text">
               {item.icon}
               <span className="menu-item menu-title">
-                {/*<FormattedMessage id={item.title} />*/}
+                <FormattedMessage id={item.title} />
               </span>
             </div>
 

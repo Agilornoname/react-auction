@@ -15,8 +15,8 @@ import axios from "axios"
 import * as Icon from "react-feather"
 import classnames from "classnames"
 import ReactCountryFlag from "react-country-flag"
-import Autocomplete from "../../../components/@vuexy/autoComplete/AutoCompleteComponent"
-import { useAuth0 } from "../../../authServices/auth0/auth0Service"
+import Autocomplete from "../../../components/@template/autoComplete/AutoCompleteComponent"
+//import { useAuth0 } from "../../../authServices/auth0/auth0Service"
 import { history } from "../../../history"
 import { IntlContext } from "../../../utility/context/Internationalization"
 
@@ -26,7 +26,7 @@ const handleNavigation = (e, path) => {
 }
 
 const UserDropdown = props => {
-  const { logout, isAuthenticated } = useAuth0()
+  //const { logout, isAuthenticated } = useAuth0()
   return (
     <DropdownMenu right>
       <DropdownItem

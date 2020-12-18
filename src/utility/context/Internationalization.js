@@ -1,5 +1,5 @@
 import React from "react"
-//import { IntlProvider } from "react-intl"
+import { IntlProvider } from "react-intl"
 
 import messages_en from "../../assets/data/locales/en.json"
 import messages_de from "../../assets/data/locales/de.json"
@@ -36,14 +36,14 @@ class IntlProviderWrapper extends React.Component {
           }
         }}
       >
-        {/*<IntlProvider*/}
-        {/*  key={locale}*/}
-        {/*  locale={locale}*/}
-        {/*  messages={messages}*/}
-        {/*  defaultLocale="en"*/}
-        {/*>*/}
-        {/*  {children}*/}
-        {/*</IntlProvider>*/}
+        <IntlProvider
+          key={locale}
+          locale={locale}
+          messages={messages}
+          defaultLocale="en"
+        >
+          {children}
+        </IntlProvider>
       </Context.Provider>
     )
   }
